@@ -1,7 +1,10 @@
 import React from "react";
 import { StyleSheet, FlatList, Text } from "react-native";
+import FlexNative from "./components/FlexNative";
+import HeightWidth from "./components/HeightWidth";
 
 import Home from "./components/Home";
+import ImagesNative from "./components/ImagesNative";
 import MyCat from "./components/MyCat";
 import StateLearn from "./components/StateLearn";
 import TextInpNative from "./components/TextInpNative";
@@ -12,6 +15,9 @@ export default function App() {
       style={styles.container}
       ListHeaderComponent={
         <>
+          <ImagesNative />
+          <FlexNative />
+          <HeightWidth />
           <TextInpNative />
           <Home />
         </>
