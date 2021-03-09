@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { ScrollView} from "react-native";
+
+import Home from "./components/Home";
+import ListViewsNative from "./components/ListViewsNative";
+import MyCat from "./components/MyCat";
+import StateLearn from "./components/StateLearn";
+import TextInpNative from "./components/TextInpNative";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView style={{ paddingTop: 22 }}>
+      <ListViewsNative />
+      <TextInpNative />
+      <Home />
+      <MyCat />
+      <StateLearn />
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
