@@ -18,9 +18,16 @@ export default function HomeScreen({ navigation }) {
       ListHeaderComponent={
         <>
           <Button
-            color='red'
+            color="red"
             title="Go to Jane's profileSCREEN"
-            onPress={() => navigation.navigate("Profile", { name: "Jane" })}
+            onPress={() =>
+              navigation.navigate("ProfileScreen", { name: "Jane" })
+            }
+          />
+          <Button
+            color="pink"
+            title="Go to Animation SCREEN"
+            onPress={() => navigation.navigate("AnimationScreen")}
           />
           <TouchableNative />
           <ButtonNative />
@@ -53,7 +60,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44,
-  }
+  },
 });
 
 const data = [
