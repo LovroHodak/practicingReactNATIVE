@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, FlatList, Text } from "react-native";
+import ButtonNative from "./components/ButtonNative";
 import FlexNative from "./components/FlexNative";
 import HeightWidth from "./components/HeightWidth";
 
@@ -8,6 +9,7 @@ import ImagesNative from "./components/ImagesNative";
 import MyCat from "./components/MyCat";
 import StateLearn from "./components/StateLearn";
 import TextInpNative from "./components/TextInpNative";
+import TouchableNative from "./components/TouchableNative";
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
       style={styles.container}
       ListHeaderComponent={
         <>
+          <TouchableNative />
+          <ButtonNative />
           <ImagesNative />
           <FlexNative />
           <HeightWidth />
