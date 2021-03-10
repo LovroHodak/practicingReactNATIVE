@@ -1,65 +1,25 @@
-import React from "react";
-import { StyleSheet, FlatList, Text } from "react-native";
-import ButtonNative from "./components/ButtonNative";
-import FlexNative from "./components/FlexNative";
-import HeightWidth from "./components/HeightWidth";
+import "react-native-gesture-handler";
 
-import Home from "./components/Home";
-import ImagesNative from "./components/ImagesNative";
-import MyCat from "./components/MyCat";
-import StateLearn from "./components/StateLearn";
-import TextInpNative from "./components/TextInpNative";
-import TouchableNative from "./components/TouchableNative";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import HomeScreen from "./screens/HomeScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <FlatList
-      style={styles.container}
-      ListHeaderComponent={
-        <>
-          <TouchableNative />
-          <ButtonNative />
-          <ImagesNative />
-          <FlexNative />
-          <HeightWidth />
-          <TextInpNative />
-          <Home />
-        </>
-      }
-      data={data}
-      renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
-      ListFooterComponent={
-        <>
-          <MyCat />
-          <StateLearn />
-        </>
-      }
-    />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Welcome" }}
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "violet",
-    paddingTop: 22
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-});
-
-const data = [
-  { key: "Devin" },
-  { key: "Dan" },
-  { key: "Dominic" },
-  { key: "Jackson" },
-  { key: "James" },
-  { key: "Pevin" },
-  { key: "Pan" },
-  { key: "Pominic" },
-  { key: "Zackson" },
-  { key: "Zames" },
-]
